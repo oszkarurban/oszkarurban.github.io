@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Oszkár Urbán — MPhil Advanced Computer Science (Machine Learning), University of Cambridge. Research in ML systems, interpretability, and AI safety.">
+<title>Oszkár Urbán</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-soft: #4a4a45;
+    --ink-faint: #71716a;
+    --paper: #fbfaf7;
+    --rule: #e3e1da;
+    --accent: #6a513b;
+    --accent-soft: #8a6f54;
+    --max: 760px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.62;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 72px 28px 110px;
+  }
+
+  /* ---- Header ---- */
+  header { display: flex; gap: 30px; align-items: flex-start; }
+
+  .portrait {
+    flex: 0 0 124px;
+    width: 124px;
+    height: 124px;
+    border-radius: 3px;
+    object-fit: cover;
+    background: #ece9e2;
+    filter: grayscale(8%);
+  }
+
+  .head-text { flex: 1 1 auto; min-width: 0; padding-top: 2px; }
+
+  h1 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    margin: 0 0 6px;
+  }
+
+  .tagline {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+    line-height: 1.5;
+  }
+  .tagline a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .tagline a:hover { border-color: var(--accent); }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 0;
+    font-size: 14px;
+    margin: 0;
+  }
+  .links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 1px 0;
+    transition: color .15s ease;
+  }
+  .links a:hover { color: var(--accent); }
+  .links span.sep { color: var(--rule); padding: 0 11px; user-select: none; }
+
+  /* ---- Sections ---- */
+  section { margin-top: 52px; }
+
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 22px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p.lede { margin: 0 0 14px; color: var(--ink-soft); }
+  p.lede:last-child { margin-bottom: 0; }
+  a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  a.inline:hover { border-color: var(--accent); }
+
+  /* ---- News ---- */
+  .news { list-style: none; margin: 0; padding: 0; }
+  .news li {
+    display: flex;
+    gap: 18px;
+    padding: 9px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 15.5px;
+  }
+  .news li:last-child { border-bottom: none; }
+  .news .when {
+    flex: 0 0 78px;
+    color: var(--ink-faint);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+    letter-spacing: 0.01em;
+  }
+  .news .what { flex: 1 1 auto; color: var(--ink-soft); }
+  .news .what a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .news .what a:hover { border-color: var(--accent); }
+
+  /* ---- Projects ---- */
+  .proj { margin-bottom: 30px; }
+  .proj:last-child { margin-bottom: 0; }
+
+  .proj .venue {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .proj h3 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.28;
+    letter-spacing: -0.006em;
+    margin: 0 0 7px;
+  }
+  .proj h3 a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  .proj h3 a:hover { border-color: var(--accent); }
+  .proj p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.58;
+  }
+  .proj .meta {
+    margin-top: 7px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .proj .meta a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .proj .meta a:hover { border-color: var(--accent); }
+  .proj .meta .dot { padding: 0 8px; color: var(--rule); }
+
+  /* ---- Footer ---- */
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 560px) {
+    .wrap { padding: 46px 22px 80px; }
+    header { gap: 20px; }
+    .portrait { flex-basis: 88px; width: 88px; height: 88px; }
+    h1 { font-size: 29px; }
+    .news li { gap: 12px; }
+    .news .when { flex-basis: 62px; }
+  }
+
+  @media (max-width: 400px) {
+    header { flex-direction: column; gap: 16px; }
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="portrait" src="assets/images/profile.jpg" alt="Oszkár Urbán">
+    <div class="head-text">
+      <h1>Oszkár Urbán</h1>
+      <p class="tagline">
+        MPhil in Advanced Computer Science (Machine Learning),
+        <a href="https://www.cst.cam.ac.uk/">University of Cambridge</a>.
+        Research in ML systems, interpretability, and AI safety.
+      </p>
+      <nav class="links">
+        <a href="assets/docs/cv.pdf">CV</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/oszkarurban">GitHub</a>
+        <span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/oszkarurban">LinkedIn</a>
+        <span class="sep">·</span>
+        <a href="mailto:osiurban@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">
+      I am an MPhil student in Advanced Computer Science (Machine Learning) at King's College, University of Cambridge, finishing in 2026. My dissertation on adaptive speculative decoding is in collaboration with the Samsung AI Center Cambridge, supervised by Young D. Kwon, Stylianos I. Venieris, and Cecilia Mascolo.
+    </p>
+    <p class="lede">
+      I work at the intersection of efficient ML systems, interpretability, and AI safety, with a longer-term interest in deep learning for science. I am currently a fellow in the MARS AI Safety Fellowship under <a class="inline" href="https://superkaiba.github.io/">Thomas Jiralerspong</a>. Previously I co-founded two startups and held research and engineering roles spanning neuroscience, protein design, and computer vision.
+    </p>
+  </section>
+
+  <section id="news">
+    <h2>News</h2>
+    <ul class="news">
+      <li>
+        <span class="when">May 2026</span>
+        <span class="what"><em>AdaptiveSpec</em> submitted to EMNLP 2026 (ACL ARR May cycle, under review).</span>
+      </li>
+      <li>
+        <span class="when">2026</span>
+        <span class="what">Joined the MARS AI Safety Fellowship in Thomas Jiralerspong's stream.</span>
+      </li>
+      <li>
+        <span class="when">2026</span>
+        <span class="what">Completing my MPhil dissertation with the Samsung AI Center Cambridge.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <h2>Featured Research</h2>
+
+    <div class="proj">
+      <p class="venue">Samsung AI · EMNLP 2026 (under review)</p>
+      <h3>Adaptive Speculative Decoding for Chain-of-Thought Reasoning Models</h3>
+      <p>
+        A training-free, per-step speculative decoding system that replaces the static draft-tree configuration of current decoders with an adaptive controller. It reads internal signals from the residual stream — token-level entropy, hidden-layer activations, and reasoning-dynamics features across the CoT trace — to gate speculative-tree expansion, relaxing during exploratory thinking and tightening during high-stakes answer phases. Built on EAGLE-3 within a forked SGLang codebase; achieves up to +56% throughput over EAGLE-3 at 93–102% accuracy retention.
+      </p>
+      <p class="meta">First author<span class="dot">·</span>Code available on request</p>
+    </div>
+
+    <div class="proj">
+      <p class="venue">University of Cambridge</p>
+      <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_activation_steering_for_mcq.pdf">Improving MCQ Performance via Activation Steering of Query Styles</a></h3>
+      <p>
+        Extracts persona vectors (polite, insulting, urgent, …) from internal LLM activations and steers along them at inference time, improving accuracy on MMLU Math, TruthfulQA, RACE, and Mind Your Tone by up to 12.5% while reducing prediction entropy and Expected Calibration Error.
+      </p>
+      <p class="meta">
+        <a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_activation_steering_for_mcq.pdf">Paper</a>
+        <span class="dot">·</span>
+        <a href="https://github.com/oszkarurban/l101-activationsteering">Code</a>
+      </p>
+    </div>
+
+    <div class="proj">
+      <p class="venue">ETH Zurich · SRI Lab</p>
+      <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/ETH_Zurich_adversarial_testing_webagents.pdf">Adversarial Testing of Web Agents</a></h3>
+      <p>
+        PGD-based adversarial image attacks against VisualWebArena VLM agents (BLIP-2 / FLAN-T5), increasing the length of enforceable adversarial captions from 4 to 19 tokens via Adam optimisation and a custom gradient-friendly image preprocessor.
+      </p>
+      <p class="meta">
+        <a href="https://github.com/oszkarurban/research-papers/blob/main/ETH_Zurich_adversarial_testing_webagents.pdf">Paper</a>
+        <span class="dot">·</span>
+        <a href="https://github.com/oszkarurban/pgd">Code</a>
+      </p>
+    </div>
+
+    <div class="proj">
+      <p class="venue">University of Cambridge</p>
+      <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_alzheimers_multimodal.pdf">Multimodal Framework for Alzheimer's Disease Classification and Stable Attribution</a></h3>
+      <p>
+        Fuses 3D T1-weighted MRI with structured clinical text (3D ViT + ModernBERT, late fusion) and uses Sparse Autoencoders with UMAP geometric constraints to recover stable, clinically consistent feature attributions across in-distribution and out-of-distribution cohorts.
+      </p>
+      <p class="meta"><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_alzheimers_multimodal.pdf">Paper</a></p>
+    </div>
+
+    <div class="proj">
+      <p class="venue">University of Cambridge</p>
+      <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_LLM_proteininversefolding_GNN.pdf">Transferability of Text LLMs for Protein Inverse Folding via Structural Tokenization</a></h3>
+      <p>
+        Discretises 3D protein backbones into 1D token strings (Foldseek's 3Di alphabet and C-α coordinate strings) and probes whether linguistic priors from a pretrained Llama-3-8B transfer to inverse folding. LoRA fine-tuning recovers meaningful sequence-recovery gains over a randomly initialised baseline, showing text-LLM inductive biases provide a usable foundation for protein design without architectural changes.
+      </p>
+      <p class="meta"><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_LLM_proteininversefolding_GNN.pdf">Paper</a></p>
+    </div>
+
+    <div class="proj">
+      <p class="venue">University of Cambridge</p>
+      <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_hungarian_minimal_pairs.pdf">Hungarian Minimal Pairs for Negation-Induced Preverb Inversion</a></h3>
+      <p>
+        Introduces a Hungarian minimal-pair benchmark targeting preverb inversion under negation, evaluates monolingual and multilingual LMs across four lexical-complexity levels, and uses mechanistic analysis to attribute failures to tokenisation artifacts and attention collapse.
+      </p>
+      <p class="meta">
+        <a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_hungarian_minimal_pairs.pdf">Paper</a>
+        <span class="dot">·</span>
+        <a href="https://github.com/oszkarurban/l95-minimalpair">Code</a>
+      </p>
+    </div>
+
+  </section>
+
+  <footer>
+    Oszkár Urbán · Cambridge, UK
+  </footer>
+
+</div>
+</body>
+</html>
