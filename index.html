@@ -208,6 +208,7 @@
 <div class="wrap">
 
   <header>
+    <!-- Portrait: place your headshot at assets/img/portrait.jpg (same assets/ folder as cv.pdf). -->
     <img class="portrait" src="assets/img/portrait.jpg" alt="Oszkár Urbán">
     <div class="head-text">
       <h1>Oszkár Urbán</h1>
@@ -243,7 +244,7 @@
     <ul class="news">
       <li>
         <span class="when">July 2026</span>
-        <span class="what">Started a research position at <em>Mila</em> (Yoshua Bengio's group) on alignment pretraining.</span>
+        <span class="what">Started a research internship at <em>Mila</em> (Yoshua Bengio's group) on alignment pretraining.</span>
       </li>
       <li>
         <span class="when">June 2026</span>
@@ -271,7 +272,8 @@
       <p class="venue">Mila · Yoshua Bengio's Group · Ongoing</p>
       <h3>Alignment Pretraining for Robust Base Models</h3>
       <p>
-        Ongoing research on improving pre- and midtraining methods for alignment — building alignment priors directly into base models rather than relying on post-hoc solutions applied in post-training.
+        Ongoing research on improving pre- and midtraining methods for alignment — building alignment priors directly into base models rather than relying on post-hoc solutions applied in post-training. The aim is initialisations where alignment properties persist through later capabilities training, complementing and reducing reliance on post-training alignment techniques.
+      </p>
       <p class="meta">MARS AI Safety Fellowship<span class="dot">·</span>Supervised by Thomas Jiralerspong</p>
     </div>
 
@@ -279,14 +281,14 @@
       <p class="venue">Samsung AI · EMNLP 2026 (under review)</p>
       <h3>Adaptive Speculative Decoding for Chain-of-Thought Reasoning Models</h3>
       <p>
-        A training-free, per-step speculative decoding system that replaces the static draft-tree configuration of current decoders with an adaptive controller. It reads internal signals from the residual stream — token-level entropy, hidden-layer activations, and reasoning-dynamics features across the CoT trace — to gate speculative-tree expansion, relaxing during exploratory thinking and tightening during high-stakes answer phases. Built on EAGLE-3 using SGLang; achieves up to +56% throughput over state-of-the-art EAGLE-3 at 93 to fully losless accuracy retention.
+        A training-free, per-step speculative decoding system that replaces the static draft-tree configuration of current decoders with an adaptive controller. It reads internal signals from the residual stream — token-level entropy, hidden-layer activations, and reasoning-dynamics features across the CoT trace — to gate speculative-tree expansion, relaxing during exploratory thinking and tightening during high-stakes answer phases. Built on EAGLE-3 within a forked SGLang codebase; achieves up to +56% throughput over EAGLE-3 at 93–102% accuracy retention.
       </p>
       <p class="meta">First author</p>
     </div>
 
     <div class="proj">
       <p class="venue">University of Cambridge</p>
-      <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_activation_steering_for_mcq.pdf">Improving MCQ Performance via Activation Steering of Personas</a></h3>
+      <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/Cambridge_activation_steering_for_mcq.pdf">Improving MCQ Performance via Activation Steering of Query Styles</a></h3>
       <p>
         Extracts persona vectors (polite, insulting, urgent, …) from internal LLM activations and steers along them at inference time, improving accuracy on MMLU Math, TruthfulQA, RACE, and Mind Your Tone by up to 12.5% while reducing prediction entropy and Expected Calibration Error.
       </p>
@@ -297,7 +299,7 @@
       <p class="venue">ETH Zurich · SRI Lab</p>
       <h3><a href="https://github.com/oszkarurban/research-papers/blob/main/ETH_Zurich_adversarial_testing_webagents.pdf">Adversarial Testing of Web Agents</a></h3>
       <p>
-        PGD-based adversarial image attacks against VisualWebArena VLM agents (BLIP-2 / FLAN-T5), increasing the length of enforceable adversarial captions from 4 to 19 tokens with a custom gradient-friendly image preprocessor.
+        PGD-based adversarial image attacks against VisualWebArena VLM agents (BLIP-2 / FLAN-T5), increasing the length of enforceable adversarial captions from 4 to 19 tokens via Adam optimisation and a custom gradient-friendly image preprocessor.
       </p>
       <p class="meta"><a href="https://github.com/oszkarurban/research-papers/blob/main/ETH_Zurich_adversarial_testing_webagents.pdf">Paper</a></p>
     </div>
